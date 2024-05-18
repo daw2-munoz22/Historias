@@ -16,7 +16,7 @@ export function HistoryCard({id, titulo, fecha, imagen, comentario}){
           src={imagen}
       />
       <CardFooter className="absolute bg-white/30 bottom-0 border-t-1 border-zinc-100/50 z-10 justify-between">
-          <div className="w-1/2">
+          <div className="w-2/3">
               <p className="text-black text-tiny">{comentario}</p>
           </div>
           <div className="space-x-2">

@@ -1,5 +1,5 @@
 import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure, Checkbox, Input, Link} from "@nextui-org/react";
-import { Calendar, Pencil, Plus } from "lucide-react";
+import { Calendar, Pencil, Plus, Image } from "lucide-react";
 
 
 export default function FormularioModal(){
@@ -21,16 +21,8 @@ export default function FormularioModal(){
             <>
               <ModalHeader className="flex flex-col gap-1">Editar Historia "Historia sin título"</ModalHeader>
               <ModalBody>
-                <Input
-                  autoFocus
-                  endContent={
-                    <Calendar className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
-                  }
-                  label="Fecha"
-                  placeholder="Ejemplo Marzo de 2024"
-                  variant="bordered"
-                />
-                <Input
+
+              <Input
                   endContent={
                     <Pencil className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
                   }
@@ -40,6 +32,16 @@ export default function FormularioModal(){
                 />
 
                 <Input
+                  autoFocus
+                  endContent={
+                    <Calendar className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
+                  }
+                  label="Fecha"
+                  placeholder="Ejemplo Marzo de 2024"
+                  variant="bordered"
+                />
+                
+                <Input
                   label="Experiencia"
                   placeholder="Describe tu experiencia"
                 />
@@ -48,6 +50,16 @@ export default function FormularioModal(){
                   label="Comentarios"
                   placeholder="Escribe Comentarios"
                 />
+
+                <Input
+                  endContent={
+                    <Image className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
+                  }
+                  label="Imagen"
+                  placeholder="Editar Imagen"
+                  variant="bordered"
+                />
+                
               </ModalBody>
               <ModalFooter>
                 <Button color="danger" variant="flat" onPress={onClose}>

@@ -3,6 +3,12 @@ import { Pencil, Trash2 } from "lucide-react";
 
 
 export function HistoryCard({id, titulo, fecha, imagen, comentario}){
+
+
+    const controladorEditarHistoria = () => {
+        setDataHistoria({ id, titulo, fecha, imagen, comentario });
+      };
+          
     return(
       <Card id={id} isFooterBlurred className="w-full h-[300px] col-span-12 sm:col-span-5">
       <CardHeader className="absolute z-10 top-1 flex-col items-start">

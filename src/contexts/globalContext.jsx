@@ -8,7 +8,7 @@ export const GlobalProvider = ({ children }) => {
     const [historias, setHistorias] = useState(historiasData.historias)
     const [dataHistoria, setDataHistoria] = useState()
     return (
-        <GlobalContext.Provider value={{ historias, setHistorias }}>
+        <GlobalContext.Provider value={{ historias, setHistorias, dataHistoria, setDataHistoria }}>
             {children}
         </GlobalContext.Provider>
     )    

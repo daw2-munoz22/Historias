@@ -1,10 +1,12 @@
 import { Button, Card, CardFooter, CardHeader, Image } from "@nextui-org/react";
 import { Pencil, Trash2 } from "lucide-react";
+import { useGlobalContext } from "../contexts/globalContext";
 
 
 export function HistoryCard({id, titulo, fecha, imagen, comentario}){
 
-
+    const { setDataHistoria } = useGlobalContext();
+    
     const controladorEditarHistoria = () => {
         setDataHistoria({ id, titulo, fecha, imagen, comentario });
       };
@@ -26,7 +28,7 @@ export function HistoryCard({id, titulo, fecha, imagen, comentario}){
               <p className="text-black text-tiny">{comentario}</p>
           </div>
           <div className="space-x-2">
-              <Button color="warning" variant="ghost" radius="lg" size="sm">
+              <Button color="warning" variant="ghost" radius="lg" size="sm" onPress={controladorEditarHistoria}>
                   <Pencil />
               </Button>
               <Button color="danger" variant="ghost" radius="lg" size="sm">

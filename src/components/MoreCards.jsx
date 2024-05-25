@@ -14,6 +14,7 @@ export function Cards(){
               key={index}
               titulo={historia.titulo}
               fecha={historia.fecha}
+              experiencia={historia.experiencia}
               comentario={historia.comentario}
               imagen={historia.imagen}
             />

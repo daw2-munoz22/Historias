@@ -32,7 +32,7 @@ export function HistoryCard({ id, titulo, fecha, experiencia, comentario, imagen
         <Card id={id} isFooterBlurred className="w-full h-[300px] col-span-12 md:col-span-6">
             <CardHeader className="absolute z-10 top-1 flex-col items-start">
                 <p className="text-tiny text-white/60 uppercase font-bold">Viaje a {titulo}</p>
-                <h4 className="text-black font-medium text-2xl">{fecha}</h4>
+                <h4 className="text-white font-medium text-2xl">{fecha}</h4>
             </CardHeader>
             <Image
                 removeWrapper

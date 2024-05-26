@@ -11,7 +11,8 @@ export function Cards(){
         {
           historias.map((historia, index) => (
             <HistoryCard
-              key={index}
+              key={index}    
+              id={historia.id}          
               titulo={historia.titulo}
               fecha={historia.fecha}
               experiencia={historia.experiencia}

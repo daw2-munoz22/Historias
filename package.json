@@ -13,6 +13,7 @@
     "@nextui-org/modal": "^2.0.33",
     "@nextui-org/react": "^2.3.6",
     "framer-motion": "^11.2.0",
+    "json-server": "^1.0.0-beta.0",
     "lucide-react": "^0.378.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

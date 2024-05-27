@@ -1,6 +1,6 @@
 import { useState, useContext, createContext } from "react";
 
-import historiasData from '../database/db.json'
+import historiasData from '../../db.json'
 
 const GlobalContext = createContext();
 

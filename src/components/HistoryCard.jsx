@@ -1,15 +1,14 @@
-
 import { Button, Card, CardFooter, CardHeader, Image, Modal, useDisclosure  } from "@nextui-org/react";
 import { Pencil, Trash2 } from "lucide-react";
 import { useGlobalContext } from '../contexts/globalContext';
 import FormularioModal from './VentanaModalFormulario';
-
+import HistoriaController from "../controller/HistoriaController";
 
 export function HistoryCard({ id, titulo, fecha, experiencia, comentario, imagen  }) {
     const { setDataHistoria } = useGlobalContext()
     const {isOpen, onOpen, onOpenChange} = useDisclosure();
 
-    function controladorEditarHistoria() {
+    function EditarHistoria() {
         const historia = {
             "id": id,
             "titulo": titulo,
@@ -23,9 +22,6 @@ export function HistoryCard({ id, titulo, fecha, experiencia, comentario, imagen
         onOpen()
     }
 
-    function controladorBorrarHistoria(id) {
-        console.log("ID de la historia a borrar:", id);
-    }
 
     return (
     <>
@@ -45,10 +41,10 @@ export function HistoryCard({ id, titulo, fecha, experiencia, comentario, imagen
                     <p className="text-black text-tiny">{experiencia}</p>
                 </div>
                 <div className="space-x-2 ">
-                    <Button color="warning" variant="ghost" radius="lg" size="sm" onClick={controladorEditarHistoria}>
+                    <Button color="warning" variant="ghost" radius="lg" size="sm" onClick={EditarHistoria}>
                         <Pencil />
                     </Button>
-                    <Button color="danger" variant="ghost" radius="lg" size="sm" onClick={() => controladorBorrarHistoria(id)}>
+                    <Button color="danger" variant="ghost" radius="lg" size="sm" onClick={() => HistoriaController.controladorBorrarHistoria(id)}>
                         <Trash2 />
                     </Button>
                 </div>

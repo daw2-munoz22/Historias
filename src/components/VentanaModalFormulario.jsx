@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure, Input, Textarea  } from "@nextui-org/react";
 import { Calendar, Pencil, Plus, Image } from "lucide-react";
 import { useGlobalContext } from '../contexts/globalContext';
+import HistoriaController from '../controller/HistoriaController';
 
 export default function FormularioModal() {
     const { dataHistoria, setDataHistoria } = useGlobalContext()
@@ -13,13 +14,7 @@ export default function FormularioModal() {
             [name]: value,
         }));
     }
-
-    function controladorActualizaHistorias() {
-        console.log(`ID: ${dataHistoria.id}`);
-        console.log('Información de la historia:', dataHistoria);
-    }
-
-
+    
     return (
         <ModalContent>
             {(onClose) => (
@@ -76,7 +71,7 @@ export default function FormularioModal() {
                         <Button color="danger" variant="flat" onPress={onClose}>
                             Cerrar
                         </Button>
-                        <Button color={dataHistoria ? "success" : 'primary'} onPress={() => {controladorActualizaHistorias(); onClose();}}>
+                        <Button color={dataHistoria ? "success" : 'primary'} onPress={() => {HistoriaController.controladorActualizaHistorias(dataHistoria); onClose();}}>
                             {dataHistoria ? 'Actualizar' : 'Crear historia'}
                         </Button>
                     </ModalFooter>

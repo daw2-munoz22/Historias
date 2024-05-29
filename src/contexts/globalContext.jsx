@@ -8,10 +8,11 @@ const GlobalContext = createContext();
 export const GlobalProvider = ({ children }) => {
     const [historias, setHistorias] = useState([]);
     const [dataHistoria, setDataHistoria] = useState(); 
-
+    
     const fetchHistorias = async () => {
         try {
-            const response = await fetch('http://localhost:3000/historias');
+            /*const response = await fetch('http://localhost:3000/historias');*/
+            const response = await fetch('https://json-server-edgar.vercel.app/historias');
             const data = await response.json();
             setHistorias(data);
         } catch (error) {
